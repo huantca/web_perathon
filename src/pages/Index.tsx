@@ -6,6 +6,7 @@ import TrainersSection from "@/components/TrainersSection";
 import ContactSection from "@/components/ContactSection";
 import AppDemoSection from "@/components/AppDemoSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
         <AppDemoSection />
         <FinalCTASection />
       </main>
+      <Footer />
     </div>
   );
 };
