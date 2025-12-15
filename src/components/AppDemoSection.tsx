@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const screens = [
   {
@@ -139,10 +140,14 @@ const screens = [
 ];
 
 const AppDemoSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section id="testimonial" className="py-16 lg:py-24 bg-secondary/50">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+      <div ref={ref} className="container mx-auto px-4 lg:px-8">
+        <div className={`text-center max-w-3xl mx-auto mb-12 lg:mb-16 transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-4">
             App <span className="text-primary">Demo</span>
           </h2>
@@ -159,8 +164,10 @@ const AppDemoSection = () => {
           {screens.map((screen, index) => (
             <div
               key={screen.title}
-              className="group"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              className={`group transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              }`}
+              style={{ transitionDelay: `${index * 150 + 200}ms` }}
             >
               {/* Phone Frame */}
               <div className="bg-foreground rounded-[2.5rem] p-2 shadow-card group-hover:shadow-glow transition-shadow duration-300">

@@ -1,14 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ContactSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
   return (
     <section id="about" className="py-16 lg:py-24">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div ref={ref} className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
-            <div className="space-y-6">
+            <div className={`space-y-6 transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground">
                 Contact <span className="text-primary">Us</span>
               </h2>
@@ -18,40 +23,34 @@ const ContactSection = () => {
               </p>
 
               <div className="space-y-4 pt-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-primary" />
+                {[
+                  { icon: Mail, label: "Email", value: "hello@perathon.com", delay: 100 },
+                  { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", delay: 200 },
+                  { icon: MapPin, label: "Location", value: "San Francisco, CA", delay: 300 },
+                ].map((item) => (
+                  <div 
+                    key={item.label}
+                    className={`flex items-center gap-4 transition-all duration-500 ${
+                      isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+                    }`}
+                    style={{ transitionDelay: `${item.delay}ms` }}
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground">{item.label}</div>
+                      <div className="font-semibold text-foreground">{item.value}</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground">Email</div>
-                    <div className="font-semibold text-foreground">hello@perathon.com</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground">Phone</div>
-                    <div className="font-semibold text-foreground">+1 (555) 123-4567</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground">Location</div>
-                    <div className="font-semibold text-foreground">San Francisco, CA</div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
             {/* Right Content - CTA Card */}
-            <div className="bg-gradient-to-br from-primary to-primary/80 rounded-3xl p-8 lg:p-10 text-center shadow-glow">
+            <div className={`bg-gradient-to-br from-primary to-primary/80 rounded-3xl p-8 lg:p-10 text-center shadow-glow transition-all duration-700 delay-200 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+            }`}>
               <div className="w-16 h-16 rounded-2xl bg-primary-foreground/20 flex items-center justify-center mx-auto mb-6">
                 <span className="text-primary-foreground text-3xl">🏃</span>
               </div>
