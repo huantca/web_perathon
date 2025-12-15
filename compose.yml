@@ -1,0 +1,40 @@
+services:
+  my-react-app:
+    build: .
+    container_name: my-react-app
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+
+      # --- CHANGE 1: Use a local domain ---
+      - "traefik.http.routers.my-react-app.rule=Host(`mysite.local`)"
+
+      # --- CHANGE 2: Use HTTP (not websecure) ---
+      - "traefik.http.routers.my-react-app.entrypoints=web"
+
+      # --- CHANGE 3: Remove the TLS/SSL Resolver line ---
+      # (Delete the line: traefik.http.routers.my-react-app.tls.certresolver=...)
+
+      # Point to internal Nginx port
+      - "traefik.http.services.my-react-app.loadbalancer.server.port=8080"
+  traefik:
+    image: traefik:v3.0
+    container_name: traefik
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80" # Listen on HTTP
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
