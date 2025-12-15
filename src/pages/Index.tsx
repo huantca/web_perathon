@@ -4,6 +4,8 @@ import DownloadSection from "@/components/DownloadSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import TrainersSection from "@/components/TrainersSection";
 import ContactSection from "@/components/ContactSection";
+import AppDemoSection from "@/components/AppDemoSection";
+import FinalCTASection from "@/components/FinalCTASection";
 
 const Index = () => {
   return (
@@ -15,6 +17,8 @@ const Index = () => {
         <BenefitsSection />
         <TrainersSection />
         <ContactSection />
+        <AppDemoSection />
+        <FinalCTASection />
       </main>
     </div>
   );
