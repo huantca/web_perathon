@@ -16,9 +16,8 @@ const FinalCTASection = () => {
       </div>
 
       <div ref={ref} className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className={`text-center max-w-3xl mx-auto transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}>
+        <div className={`text-center max-w-3xl mx-auto transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground mb-4">
             Unlock Your Running Potential
           </h2>
@@ -26,29 +25,31 @@ const FinalCTASection = () => {
             Download Perathon Now
           </p>
 
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-200 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}>
-            <Button 
+          <div className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}>
+            {/* App Store Buttons */}
+
+            <Button
               size="lg"
-              className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary rounded-xl px-6 h-14 gap-3 font-semibold shadow-soft transition-all duration-300 hover:scale-105"
+              className="bg-foreground hover:bg-foreground/90 text-background rounded-xl px-6 h-14 gap-3 font-semibold shadow-soft hover:shadow-card transition-all duration-300"
             >
-              <Play className="w-6 h-6 fill-current" />
+              <img src="/ic_chplay.svg" className="w-8 h-8 object-contain" />
               <div className="text-left">
-                <div className="text-xs opacity-70">GET IT ON</div>
+                <div className="text-xs opacity-80">GET IT ON</div>
                 <div className="text-sm font-bold">Google Play</div>
               </div>
             </Button>
-            <Button 
+            <Button
               size="lg"
-              className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary rounded-xl px-6 h-14 gap-3 font-semibold shadow-soft transition-all duration-300 hover:scale-105"
+              className="bg-foreground hover:bg-foreground/90 text-background rounded-xl px-6 h-14 gap-3 font-semibold shadow-soft hover:shadow-card transition-all duration-300"
             >
-              <Apple className="w-6 h-6" />
+              <img src="/ic_apple.svg" className="w-9 h-9 object-contain" />
               <div className="text-left">
-                <div className="text-xs opacity-70">Download on the</div>
+                <div className="text-xs opacity-80">Download on the</div>
                 <div className="text-sm font-bold">App Store</div>
               </div>
             </Button>
+
           </div>
         </div>
       </div>

@@ -1,12 +1,13 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const trainers = [
-  { id: 1, name: "Sarah Johnson", specialty: "Marathon", img: 11 },
-  { id: 2, name: "Mike Chen", specialty: "Sprint", img: 12 },
-  { id: 3, name: "Emma Davis", specialty: "Trail", img: 13 },
-  { id: 4, name: "Alex Rivera", specialty: "HIIT", img: 14 },
-  { id: 5, name: "Lisa Park", specialty: "Endurance", img: 15 },
-  { id: 6, name: "James Wilson", specialty: "Recovery", img: 16 },
+  { id: 1, name: "Huan", specialty: "Dev", img: "huan.png" },
+  { id: 2, name: "Tuan", specialty: "Leader", img: "tuan.png" },
+  { id: 3, name: "An", specialty: "Dev", img: "an.png" },
+  { id: 4, name: "Minh", specialty: "Designer", img: "minh.png" },
+  { id: 5, name: "Huy", specialty: "Designer", img: "huy.png" },
+  { id: 6, name: "Oanh", specialty: "Marketing", img: "oanh.png" },
+  { id: 7, name: "Phuong Anh", specialty: "Leader", img: "pAnh.png" },
 ];
 
 const TrainersSection = () => {
@@ -15,39 +16,54 @@ const TrainersSection = () => {
   return (
     <section id="how-it-works" className="py-16 lg:py-24 bg-secondary/50 overflow-hidden">
       <div ref={ref} className="container mx-auto px-4 lg:px-8">
-        <div className={`text-center max-w-3xl mx-auto mb-12 lg:mb-16 transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}>
+        <div className={`text-center max-w-3xl mx-auto mb-12 lg:mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-4">
-            Our <span className="text-primary">Trainers</span>
+            Our <span className="text-primary">Team</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            World-Class Fitness Trainers At Your Fingertips
+            Meet the young, passionate team of runners and creators dedicated to building the ultimate, personalized digital coaching experience for the running community.
           </p>
         </div>
 
         {/* Creative Trainer Layout */}
-        <div className={`relative max-w-4xl mx-auto h-[400px] lg:h-[500px] transition-all duration-1000 ${
-          isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-        }`}>
+        <div className={`relative max-w-4xl mx-auto h-[400px] lg:h-[500px] transition-all duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          }`}>
           {/* Center decoration */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-primary/10 flex items-center justify-center">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
+  w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-primary/10 flex items-center justify-center">
+
             <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-primary/20 flex items-center justify-center">
-              <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl lg:text-2xl">P</span>
+
+              <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white shadow-lg flex items-center justify-center">
+                <img
+                  src="/logo.png"
+                  alt="Perathon logo"
+                  className="w-7 h-7 lg:w-10 lg:h-10 object-contain"
+                />
               </div>
+
             </div>
           </div>
 
           {/* Trainers positioned around */}
           {trainers.map((trainer, index) => {
             const positions = [
-              { top: "5%", left: "15%", size: "w-20 h-20 lg:w-28 lg:h-28" },
+              { top: "6%", left: "18%", size: "w-20 h-20 lg:w-28 lg:h-28" },
+
               { top: "0%", left: "50%", size: "w-24 h-24 lg:w-32 lg:h-32", transform: "-translate-x-1/2" },
-              { top: "5%", right: "15%", size: "w-20 h-20 lg:w-28 lg:h-28" },
-              { bottom: "10%", left: "10%", size: "w-20 h-20 lg:w-28 lg:h-28" },
-              { bottom: "5%", left: "50%", size: "w-20 h-20 lg:w-26 lg:h-26", transform: "-translate-x-1/2" },
-              { bottom: "10%", right: "10%", size: "w-20 h-20 lg:w-28 lg:h-28" },
+
+              { top: "6%", right: "18%", size: "w-20 h-20 lg:w-28 lg:h-28" },
+
+              // ===== MIDDLE =====
+              { top: "38%", left: "4%", size: "w-20 h-20 lg:w-28 lg:h-28" },
+
+              { top: "38%", right: "4%", size: "w-20 h-20 lg:w-28 lg:h-28" },
+
+              // ===== BOTTOM =====
+              { bottom: "6%", left: "28%", size: "w-24 h-24 lg:w-32 lg:h-32", transform: "-translate-x-1/2" },
+
+              { bottom: "6%", right: "28%", size: "w-24 h-24 lg:w-32 lg:h-32", transform: "translate-x-1/2" },
             ];
 
             const pos = positions[index];
@@ -55,9 +71,8 @@ const TrainersSection = () => {
             return (
               <div
                 key={trainer.id}
-                className={`absolute group ${pos.size} ${pos.transform || ""} transition-all duration-700 ${
-                  isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"
-                }`}
+                className={`absolute group ${pos.size} ${pos.transform || ""} transition-all duration-700 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"
+                  }`}
                 style={{
                   top: pos.top,
                   left: pos.left,
@@ -69,7 +84,7 @@ const TrainersSection = () => {
                 <div className="relative w-full h-full">
                   <div className="w-full h-full rounded-full overflow-hidden border-4 border-background shadow-card group-hover:border-primary group-hover:scale-110 transition-all duration-300">
                     <img
-                      src={`https://i.pravatar.cc/150?img=${trainer.img}`}
+                      src={`/${trainer.img}`}
                       alt={trainer.name}
                       className="w-full h-full object-cover"
                     />

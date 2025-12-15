@@ -17,7 +17,7 @@ const Index = () => {
         <DownloadSection />
         <BenefitsSection />
         <TrainersSection />
-        <ContactSection />
+        {/* <ContactSection /> */}
         <AppDemoSection />
         <FinalCTASection />
       </main>

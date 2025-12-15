@@ -5,10 +5,8 @@ import { Button } from "@/components/ui/button";
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "Benefits", href: "#benefits" },
-  { label: "How it Works", href: "#how-it-works" },
-  { label: "About Us", href: "#about" },
+  { label: "Our Team", href: "#how-it-works" },
   { label: "Testimonial", href: "#testimonial" },
-  { label: "Blog", href: "#blog" },
 ];
 
 const Header = () => {
@@ -32,10 +30,14 @@ const Header = () => {
             onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }}
             className="flex items-center gap-2"
           >
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">P</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Perathon</span>
+           <img
+                src="/logo.png"
+                alt="Perathon logo"
+                className="w-10 h-10 object-contain"
+              />
+            <span className="text-2xl font-extrabold tracking-wide text-[#6B3A0F]">
+              Perathon
+            </span>
           </a>
 
           {/* Desktop Navigation */}

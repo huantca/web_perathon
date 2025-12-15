@@ -37,19 +37,22 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background pt-16 pb-8">
       <div ref={ref} className="container mx-auto px-4 lg:px-8">
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12 transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}>
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           {/* Logo & Description */}
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">P</span>
-              </div>
-              <span className="text-xl font-bold text-background">Perathon</span>
+              <img
+                src="/logo.png"
+                alt="Perathon logo"
+                className="w-10 h-10 object-contain"
+              />
+              <span className="text-2xl font-extrabold tracking-wide text-[#FF7917]">
+                Perathon
+              </span>
             </a>
             <p className="text-background/70 text-sm leading-relaxed mb-6">
-              Transform your running journey with AI-powered personalized training plans. 
+              Transform your running journey with AI-powered personalized training plans.
               Join thousands of runners achieving their fitness goals.
             </p>
             <div className="flex gap-3">
@@ -115,7 +118,7 @@ const Footer = () => {
                 className="bg-background/10 border-background/20 text-background placeholder:text-background/50 rounded-xl focus:border-primary"
                 required
               />
-              <Button 
+              <Button
                 type="submit"
                 size="icon"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl flex-shrink-0"
@@ -127,9 +130,8 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className={`border-t border-background/10 pt-8 transition-all duration-700 delay-200 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}>
+        <div className={`border-t border-background/10 pt-8 transition-all duration-700 delay-200 ${isVisible ? "opacity-100" : "opacity-0"
+          }`}>
           <p className="text-center text-background/50 text-sm">
             © Copyright 2025 Perathon. All Rights Reserved.
           </p>
