@@ -1,3 +1,5 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const trainers = [
   { id: 1, name: "Sarah Johnson", specialty: "Marathon", img: 11 },
   { id: 2, name: "Mike Chen", specialty: "Sprint", img: 12 },
@@ -8,10 +10,14 @@ const trainers = [
 ];
 
 const TrainersSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
   return (
     <section id="how-it-works" className="py-16 lg:py-24 bg-secondary/50 overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+      <div ref={ref} className="container mx-auto px-4 lg:px-8">
+        <div className={`text-center max-w-3xl mx-auto mb-12 lg:mb-16 transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-4">
             Our <span className="text-primary">Trainers</span>
           </h2>
@@ -21,7 +27,9 @@ const TrainersSection = () => {
         </div>
 
         {/* Creative Trainer Layout */}
-        <div className="relative max-w-4xl mx-auto h-[400px] lg:h-[500px]">
+        <div className={`relative max-w-4xl mx-auto h-[400px] lg:h-[500px] transition-all duration-1000 ${
+          isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}>
           {/* Center decoration */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-primary/10 flex items-center justify-center">
             <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-primary/20 flex items-center justify-center">
@@ -37,9 +45,9 @@ const TrainersSection = () => {
               { top: "5%", left: "15%", size: "w-20 h-20 lg:w-28 lg:h-28" },
               { top: "0%", left: "50%", size: "w-24 h-24 lg:w-32 lg:h-32", transform: "-translate-x-1/2" },
               { top: "5%", right: "15%", size: "w-20 h-20 lg:w-28 lg:h-28" },
-              { bottom: "10%", left: "10%", size: "w-22 h-22 lg:w-30 lg:h-30" },
+              { bottom: "10%", left: "10%", size: "w-20 h-20 lg:w-28 lg:h-28" },
               { bottom: "5%", left: "50%", size: "w-20 h-20 lg:w-26 lg:h-26", transform: "-translate-x-1/2" },
-              { bottom: "10%", right: "10%", size: "w-22 h-22 lg:w-30 lg:h-30" },
+              { bottom: "10%", right: "10%", size: "w-20 h-20 lg:w-28 lg:h-28" },
             ];
 
             const pos = positions[index];
@@ -47,12 +55,15 @@ const TrainersSection = () => {
             return (
               <div
                 key={trainer.id}
-                className={`absolute group ${pos.size} ${pos.transform || ""}`}
+                className={`absolute group ${pos.size} ${pos.transform || ""} transition-all duration-700 ${
+                  isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"
+                }`}
                 style={{
                   top: pos.top,
                   left: pos.left,
                   right: pos.right,
                   bottom: pos.bottom,
+                  transitionDelay: `${index * 100 + 300}ms`,
                 }}
               >
                 <div className="relative w-full h-full">

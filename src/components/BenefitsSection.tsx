@@ -1,4 +1,5 @@
 import { Zap, Target, Wallet, Award } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const benefits = [
   {
@@ -24,10 +25,14 @@ const benefits = [
 ];
 
 const BenefitsSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section id="benefits" className="py-16 lg:py-24">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+      <div ref={ref} className="container mx-auto px-4 lg:px-8">
+        <div className={`text-center max-w-3xl mx-auto mb-12 lg:mb-16 transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mb-4">
             Exclusive Benefits of <span className="text-primary">Perathon</span>
           </h2>
@@ -40,8 +45,10 @@ const BenefitsSection = () => {
           {benefits.map((benefit, index) => (
             <div
               key={benefit.title}
-              className="group bg-background border border-border rounded-2xl p-6 lg:p-8 shadow-soft hover:shadow-card hover:border-primary/20 transition-all duration-300"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`group bg-background border border-border rounded-2xl p-6 lg:p-8 shadow-soft hover:shadow-card hover:border-primary/20 transition-all duration-500 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${index * 100 + 200}ms` }}
             >
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                 <benefit.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors duration-300" />

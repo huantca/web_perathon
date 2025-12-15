@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Facebook, Twitter, Instagram, Send } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const companyLinks = [
   { label: "Home", href: "#home" },
@@ -26,17 +27,19 @@ const socialLinks = [
 
 const Footer = () => {
   const [email, setEmail] = useState("");
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle subscription
     setEmail("");
   };
 
   return (
     <footer className="bg-foreground text-background pt-16 pb-8">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
+      <div ref={ref} className="container mx-auto px-4 lg:px-8">
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12 transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}>
           {/* Logo & Description */}
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center gap-2 mb-4">
@@ -124,7 +127,9 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-background/10 pt-8">
+        <div className={`border-t border-background/10 pt-8 transition-all duration-700 delay-200 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}>
           <p className="text-center text-background/50 text-sm">
             © Copyright 2025 Perathon. All Rights Reserved.
           </p>

@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Apple, Play } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const FinalCTASection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.3 });
+
   return (
     <section className="py-16 lg:py-24 bg-primary relative overflow-hidden">
       {/* Background decorations */}
@@ -12,8 +15,10 @@ const FinalCTASection = () => {
         <div className="absolute bottom-1/4 right-1/3 w-32 h-32 rounded-full border border-primary-foreground"></div>
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto">
+      <div ref={ref} className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className={`text-center max-w-3xl mx-auto transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground mb-4">
             Unlock Your Running Potential
           </h2>
@@ -21,7 +26,9 @@ const FinalCTASection = () => {
             Download Perathon Now
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-200 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
             <Button 
               size="lg"
               className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary rounded-xl px-6 h-14 gap-3 font-semibold shadow-soft transition-all duration-300 hover:scale-105"
