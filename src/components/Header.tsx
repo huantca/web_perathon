@@ -31,7 +31,7 @@ const Header = () => {
             className="flex items-center gap-2"
           >
            <img
-                src="/logo.png"
+                src="/logo.svg"
                 alt="Perathon logo"
                 className="w-10 h-10 object-contain"
               />

@@ -43,7 +43,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center gap-2 mb-4">
               <img
-                src="/logo.png"
+                src="/logo.svg"
                 alt="Perathon logo"
                 className="w-10 h-10 object-contain"
               />

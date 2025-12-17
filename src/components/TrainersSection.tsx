@@ -37,7 +37,7 @@ const TrainersSection = () => {
 
               <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white shadow-lg flex items-center justify-center">
                 <img
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="Perathon logo"
                   className="w-7 h-7 lg:w-10 lg:h-10 object-contain"
                 />
