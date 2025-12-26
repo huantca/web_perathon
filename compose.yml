@@ -1,7 +1,6 @@
 services:
   perathon-web:
     build: .
-    container_name: my-react-app
     image: december31/perathon-web:1.0.0
     restart: unless-stopped
     networks:
