@@ -7,7 +7,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { toast } from "@/hooks/use-toast";
 
-const API_BASE = "https://backend.perathon.org/api/v1";
+const API_BASE = "https://backend.perathon.org/api/v1"; // use Vite proxy in dev; set VITE_API_BASE in prod
+const DISABLE_LOCKOUT = Boolean(import.meta.env?.DEV);
 
 const LOCKOUT_KEY = "auth_lockout_info"; // { failed:number, lockedUntil:number }
 
@@ -75,7 +76,7 @@ export default function DeleteAccount() {
     setLoading(true);
     
     try {
-      const payload = { email: email.trim(), password };
+      const payload = { identifier: email.trim(), password: password.trim() };
       const res = await fetch(`${API_BASE}/auth/sign-in/account/`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -109,14 +110,19 @@ export default function DeleteAccount() {
         } catch {}
         // handle lockout increments
         const nextFailed = (lockInfo.failed || 0) + 1;
-        let lockedUntil = lockInfo.lockedUntil || 0;
-        if (nextFailed >= 10) {
-          lockedUntil = Date.now() + 5 * 60 * 1000; // 5 minutes
-          toast({ title: "Quá số lần cho phép", description: "Bạn đã nhập sai 10 lần. Vui lòng thử lại sau 5 phút." });
-        } else {
+        if (DISABLE_LOCKOUT) {
           toast({ title: "Đăng nhập thất bại", description });
+          setLockInfo({ failed: nextFailed, lockedUntil: 0 });
+        } else {
+          let lockedUntil = lockInfo.lockedUntil || 0;
+          if (nextFailed >= 10) {
+            lockedUntil = Date.now() + 5 * 60 * 1000; // 5 minutes
+            toast({ title: "Quá số lần cho phép", description: "Bạn đã nhập sai 10 lần. Vui lòng thử lại sau 5 phút." });
+          } else {
+            toast({ title: "Đăng nhập thất bại", description });
+          }
+          setLockInfo({ failed: lockedUntil ? 0 : nextFailed, lockedUntil });
         }
-        setLockInfo({ failed: lockedUntil ? 0 : nextFailed, lockedUntil });
         return;
       }
       const body = await res.json();
@@ -200,9 +206,9 @@ export default function DeleteAccount() {
                   {loading ? "Đang xử lý..." : "Đăng nhập"}
                 </Button>
                 <div className="h-px bg-border" />
-                <Button type="button" variant="outline" onClick={onGoogleSignIn} disabled={loading} className="w-full">
+                {/* <Button type="button" variant="outline" onClick={onGoogleSignIn} disabled={loading} className="w-full">
                   Đăng nhập với Google
-                </Button>
+                </Button> */}
               </form>
             </CardContent>
           </Card>
