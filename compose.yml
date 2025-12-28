@@ -3,22 +3,15 @@ services:
     build: .
     image: december31/perathon-web:1.0.0
     restart: unless-stopped
+    ports:
+      - "8080:8080" # Point to internal Nginx port
     networks:
       - proxy
     labels:
       - "traefik.enable=true"
-
-      # --- CHANGE 1: Use a local domain ---
-      - "traefik.http.routers.my-react-app.rule=Host(`mysite.local`)"
-
-      # --- CHANGE 2: Use HTTP (not websecure) ---
-      - "traefik.http.routers.my-react-app.entrypoints=web"
-
-      # --- CHANGE 3: Remove the TLS/SSL Resolver line ---
-      # (Delete the line: traefik.http.routers.my-react-app.tls.certresolver=...)
-
-      # Point to internal Nginx port
-      - "traefik.http.services.my-react-app.loadbalancer.server.port=8080"
+      - "traefik.http.routers.perathon-web.rule=Host(`localhost`)"
+      - "traefik.http.routers.perathon-web.entrypoints=web"
+      - "traefik.http.services.perathon-web.loadbalancer.server.port=8080"
   traefik:
     image: traefik:v3.0
     container_name: traefik
@@ -26,10 +19,9 @@ services:
       - "--api.insecure=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80" # Listen on HTTP
+      - "--entrypoints.web.address=:80"
     ports:
       - "80:80"
-      - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
