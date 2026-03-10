@@ -51,11 +51,37 @@ const Footer = () => {
                 Perathon
               </span>
             </a>
-            <p className="text-background/70 text-sm leading-relaxed mb-6">
-              Transform your running journey with AI-powered personalized training plans.
-              Join thousands of runners achieving their fitness goals.
-            </p>
-            <div className="flex gap-3">
+            <ul className="space-y-3">
+              <li>
+                <p
+                  className="text-background/70"
+                >
+                  Xã Sơn Động, Tỉnh Bắc Ninh, Việt Nam
+                </p>
+              </li>
+              <li>
+                <p
+                  className="text-background/70"
+                >
+                  +84926927228
+                </p>
+              </li>
+              <li>
+                <p
+                  className="text-background/70"
+                >
+                  support@perathon.org
+                </p>
+              </li>
+              <li>
+                <p
+                  className="text-background/70"
+                >
+                  www.perathon.org
+                </p>
+              </li>
+            </ul>
+            <div className="flex gap-3" style={{marginTop: "20px"}}>
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -126,6 +152,11 @@ const Footer = () => {
                 <Send className="w-4 h-4" />
               </Button>
             </form>
+            <img
+              src="Ministry_of_Industry_and_Trade.png"
+              alt="Ministry_of_Industry_and_Trade"
+              style={{ maxWidth: '70%', marginTop: '24px' }}
+            />
           </div>
         </div>
 
