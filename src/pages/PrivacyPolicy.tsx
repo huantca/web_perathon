@@ -27,7 +27,7 @@ const PrivacyPolicy: React.FC = () => {
           Perathon là ứng dụng chạy bộ sử dụng AI để thiết kế lộ trình theo thể trạng và tinh chỉnh lộ trình theo từng ngày dành riêng cho từng cá nhân. Được bảo chứng bởi các chuyên gia, Perathon thấu hiểu cơ thể của người sử dụng để đưa ra những điều chỉnh cá nhân hóa và lời nhắc thông báo tinh tế, giúp việc tập luyện trở nên hiệu quả và phù hợp. Kết hợp cùng gợi ý dinh dưỡng và Gamification, Perathon biến mỗi bước chạy thành một trải nghiệm của cảm hứng và khoa học. Perathon được định hướng hỗ trợ cộng đồng chạy bộ tại Việt Nam và quốc tế thông qua công nghệ huấn luyện số hiện đại, đặt người dùng làm trung tâm.
         </p>
         <p className="mb-4 leading-relaxed">
-          Bằng việc truy cập Trang web hoặc sử dụng Ứng dụng, bạn đồng ý tuân thủ các Điều khoản này, bao gồm cả các chính sách và điều kiện bổ sung được dẫn chiếu hoặc liên kết trong văn bản.
+          Bằng việc truy cập Trang web hoặc sử dụng Ứng dụng, bạn đồng ý tuân thủ các Điều khoản này, bao kiêm cả các chính sách và điều kiện bổ sung được dẫn chiếu hoặc liên kết trong văn bản.
         </p>
         <p className="mb-4 leading-relaxed">
           Nếu bạn có bất kỳ thắc mắc nào, vui lòng liên hệ với chúng tôi qua email: <a href="mailto:support@perathon.org" className="text-blue-600 hover:underline">support@perathon.org</a>
@@ -71,7 +71,7 @@ const PrivacyPolicy: React.FC = () => {
             <strong>Tính năng cộng đồng:</strong> Khi tham gia thử thách chạy bộ, bảng xếp hạng hoặc sự kiện trực tuyến trên ứng dụng, bạn có thể chia sẻ tên, tên người dùng, ảnh đại diện, quốc gia, thành tích, nhịp tim, công suất, tiến độ tập luyện và các dữ liệu khác trong quá trình hoạt động.
           </li>
           <li>
-            <strong>Thanh toán & đăng ký dịch vụ:</strong> Khi mua gói huấn luyện, thuê huấn luyện viên, hoặc đăng ký gói trả phí, bạn sẽ cung cấp tên, địa chỉ thanh toán và thông tin thẻ ngân hàng.
+            <strong>Thanh toán & đăng ký dịch vụ:</strong> Khi mua gói huấn luyện, thuê huấn luyện viên, hoặc đăng ký các gói trả phí (Subscription/IAP), bạn sẽ cung cấp thông tin cần thiết để xử lý giao dịch. Lưu ý: Các giao dịch trên Ứng dụng di động sẽ được xử lý thông qua hệ thống thanh toán của Apple App Store hoặc Google Play Store.
           </li>
           <li>
             <strong>Liên hệ với chúng tôi:</strong> Khi gửi phản hồi hoặc yêu cầu hỗ trợ qua email hoặc trong ứng dụng, bạn có thể cung cấp tên, email, số điện thoại và nội dung trao đổi.
@@ -177,7 +177,28 @@ const PrivacyPolicy: React.FC = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4 text-blue-800">7. Thông tin của bạn được bảo vệ như thế nào?</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-blue-800">7. Mua sắm trong ứng dụng (IAP) và Gói đăng ký (Subscription)</h2>
+        <p className="mb-4 leading-relaxed">
+          Perathon cung cấp các tính năng cao cấp thông qua hình thức mua sắm trực tiếp trong ứng dụng (In-App Purchase) hoặc đăng ký thuê bao theo kỳ hạn (Subscription).
+        </p>
+        <ul className="list-disc pl-6 mb-4 space-y-3">
+          <li>
+            <strong>Xử lý thanh toán:</strong> Mọi giao dịch mua sắm trên Ứng dụng di động đều được xử lý an toàn thông qua hệ thống thanh toán của Apple (App Store) hoặc Google (Play Store). Perathon không trực tiếp thu thập hay lưu trữ thông tin thẻ tín dụng hoặc tài khoản ngân hàng của bạn.
+          </li>
+          <li>
+            <strong>Gia hạn tự động:</strong> Đối với các gói đăng ký, dịch vụ của bạn sẽ tự động gia hạn vào cuối mỗi kỳ hạn trừ khi bạn tắt tính năng tự động gia hạn trong phần cài đặt tài khoản App Store hoặc Google Play ít nhất 24 giờ trước khi kỳ hạn hiện tại kết thúc.
+          </li>
+          <li>
+            <strong>Quản lý gói dịch vụ:</strong> Bạn có thể quản lý hoặc hủy gói đăng ký bất kỳ lúc nào thông qua phần cài đặt tài khoản trên thiết bị của mình. Mọi vấn đề về hoàn tiền hoặc tranh chấp thanh toán sẽ được giải quyết theo chính sách của Apple và Google.
+          </li>
+          <li>
+            <strong>Quyền truy cập:</strong> Sau khi xác nhận mua hàng thành công, tài khoản của bạn sẽ được cấp quyền truy cập các tính năng tương ứng. Perathon có quyền thay đổi mức phí hoặc cập nhật nội dung các gói dịch vụ và sẽ thông báo trước cho người dùng thông qua ứng dụng hoặc email.
+          </li>
+        </ul>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-blue-800">8. Thông tin của bạn được bảo vệ như thế nào?</h2>
         <p className="mb-4 leading-relaxed">
           Chúng tôi nỗ lực bảo vệ tính bảo mật của dữ liệu cá nhân của bạn trong quá trình truyền tải bằng cách sử dụng phần mềm Secure Sockets Layer (SSL), phần mềm mã hóa thông tin bạn nhập vào. Nếu giao dịch được xử lý trên Dịch vụ của chúng tôi, thông tin giao dịch sẽ được truyền đi dưới dạng mã hóa bằng kết nối SSL tiêu chuẩn ngành để giúp bảo vệ thông tin đó khỏi bị đánh cắp. Chúng tôi hạn chế quyền truy cập được ủy quyền vào dữ liệu cá nhân của bạn cho những người cần biết thông tin đó để cung cấp sản phẩm hoặc dịch vụ cho bạn.
         </p>
@@ -193,7 +214,7 @@ const PrivacyPolicy: React.FC = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4 text-blue-800">8. Bạn có những quyền gì đối với dữ liệu cá nhân mà tôi nắm giữ?</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-blue-800">9. Bạn có những quyền gì đối với dữ liệu cá nhân mà tôi nắm giữ?</h2>
         <p className="mb-4">Trong một số trường hợp nhất định, theo luật, bạn có quyền yêu cầu:</p>
         <ul className="list-none space-y-4">
           <li>
@@ -235,7 +256,7 @@ const PrivacyPolicy: React.FC = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4 text-blue-800">9. Chính sách của bạn liên quan đến trẻ em là gì?</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-blue-800">10. Chính sách của bạn liên quan đến trẻ em là gì?</h2>
         <p className="mb-4 leading-relaxed">
           Dịch vụ của chúng tôi không dành cho trẻ em dưới 18 tuổi. Nếu bạn chưa đủ tuổi này, bạn không nên sử dụng Dịch vụ. Dịch vụ của chúng tôi sử dụng các biện pháp kỹ thuật để ngăn chặn trẻ em dưới 18 tuổi tạo tài khoản và do đó chúng tôi không cố ý thu thập dữ liệu cá nhân từ bất kỳ người nào dưới độ tuổi đó. Nếu chúng tôi phát hiện trẻ em đã cung cấp thông tin cá nhân cho chúng tôi, chúng tôi sẽ thực hiện các bước để xóa thông tin đó, chấm dứt tài khoản của người đó và hạn chế quyền truy cập của người đó.
         </p>
@@ -245,7 +266,7 @@ const PrivacyPolicy: React.FC = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4 text-blue-800">10. Tôi có thể liên lạc với bạn bằng cách nào?</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-blue-800">11. Tôi có thể liên lạc với bạn bằng cách nào?</h2>
         <p className="mb-4 leading-relaxed">
           Nếu bạn có thắc mắc hoặc lo ngại về Chính sách Quyền riêng tư này cũng như việc xử lý và bảo mật dữ liệu của bạn, vui lòng liên hệ với chúng tôi qua email: <a href="mailto:support@perathon.org" className="text-blue-600 hover:underline">support@perathon.org</a>
         </p>
