@@ -1,7 +1,7 @@
 services:
   perathon-web:
     build: .
-    image: december31/perathon-web:1.0.0
+    image: december31/perathon-web:1.0.1
     restart: unless-stopped
     ports:
       - "8080:8080" # Point to internal Nginx port
