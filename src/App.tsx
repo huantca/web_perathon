@@ -58,6 +58,11 @@ const App = () => (
           <Route path="/term-of-use-voice-lock-screen" element={<TermOfUseVoiceLockScreen />} />
           <Route path="/terms-of-use-voice-lock-screen" element={<TermOfUseVoiceLockScreen />} />
 
+          {/* Voice Lock Screen: Phone Lock 1*/}
+          <Route path="/privacy-policy-voice-lock-screen_1" element={<PrivacyPolicyVoiceLockScreen />} />
+          <Route path="/term-of-use-voice-lock-screen_1" element={<TermOfUseVoiceLockScreen />} />
+          <Route path="/terms-of-use-voice-lock-screen_1" element={<TermOfUseVoiceLockScreen />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
