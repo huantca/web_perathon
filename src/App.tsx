@@ -18,6 +18,8 @@ import PrivacyPolicyNovaBrowser from "./pages/PrivacyPolicyNovaBrowser";
 import TermOfUseNovaBrowser from "./pages/TermOfUseNovaBrowser";
 import PrivacyPolicyVoiceLockScreen from "./pages/PrivacyPolicyVoiceLockScreen";
 import TermOfUseVoiceLockScreen from "./pages/TermOfUseVoiceLockScreen";
+import PrivacyPolicyCallWallpaper from "./pages/PrivacyPolicyCallWallpaper";
+import TermOfUseCallWallpaper from "./pages/TermOfUseCallWallpaper";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +64,43 @@ const App = () => (
           <Route path="/privacy-policy-voice-lock-screen_1" element={<PrivacyPolicyVoiceLockScreen />} />
           <Route path="/term-of-use-voice-lock-screen_1" element={<TermOfUseVoiceLockScreen />} />
           <Route path="/terms-of-use-voice-lock-screen_1" element={<TermOfUseVoiceLockScreen />} />
+
+          {/* Call Screen: Ringtone & Music (pr006_call_screen_ringtone) */}
+          <Route path="/privacy-policy-call-screen-ringtone" element={<PrivacyPolicyCallWallpaper />} />
+          <Route path="/term-of-use-call-screen-ringtone" element={<TermOfUseCallWallpaper />} />
+          <Route path="/terms-of-use-call-screen-ringtone" element={<TermOfUseCallWallpaper />} />
+          <Route path="/call-screen-ringtone/privacy-policy" element={<PrivacyPolicyCallWallpaper />} />
+          <Route path="/call-screen-ringtone/term-of-use" element={<TermOfUseCallWallpaper />} />
+          <Route path="/call-screen-ringtone/terms-of-use" element={<TermOfUseCallWallpaper />} />
+          <Route path="/call-screen-ringtone" element={<PrivacyPolicyCallWallpaper />} />
+
+          {/* Call Screen */}
+          <Route path="/privacy-policy-call-screen" element={<PrivacyPolicyCallWallpaper />} />
+          <Route path="/term-of-use-call-screen" element={<TermOfUseCallWallpaper />} />
+          <Route path="/terms-of-use-call-screen" element={<TermOfUseCallWallpaper />} />
+          <Route path="/call-screen/privacy-policy" element={<PrivacyPolicyCallWallpaper />} />
+          <Route path="/call-screen/term-of-use" element={<TermOfUseCallWallpaper />} />
+          <Route path="/call-screen/terms-of-use" element={<TermOfUseCallWallpaper />} />
+          <Route path="/call-screen" element={<PrivacyPolicyCallWallpaper />} />
+
+          {/* Call Wallpaper / Custom Ringtones Call Theme */}
+          {/* Path requested: custom-ringtones-call-theme */}
+          <Route path="/privacy-policy-custom-ringtones-call-theme" element={<PrivacyPolicyCallWallpaper />} />
+          <Route path="/term-of-use-custom-ringtones-call-theme" element={<TermOfUseCallWallpaper />} />
+          <Route path="/terms-of-use-custom-ringtones-call-theme" element={<TermOfUseCallWallpaper />} />
+          <Route path="/custom-ringtones-call-theme/privacy-policy" element={<PrivacyPolicyCallWallpaper />} />
+          <Route path="/custom-ringtones-call-theme/term-of-use" element={<TermOfUseCallWallpaper />} />
+          <Route path="/custom-ringtones-call-theme/terms-of-use" element={<TermOfUseCallWallpaper />} />
+          <Route path="/custom-ringtones-call-theme" element={<PrivacyPolicyCallWallpaper />} />
+
+          {/* Path alias: call-wallpaper */}
+          <Route path="/privacy-policy-call-wallpaper" element={<PrivacyPolicyCallWallpaper />} />
+          <Route path="/term-of-use-call-wallpaper" element={<TermOfUseCallWallpaper />} />
+          <Route path="/terms-of-use-call-wallpaper" element={<TermOfUseCallWallpaper />} />
+          <Route path="/call-wallpaper/privacy-policy" element={<PrivacyPolicyCallWallpaper />} />
+          <Route path="/call-wallpaper/term-of-use" element={<TermOfUseCallWallpaper />} />
+          <Route path="/call-wallpaper/terms-of-use" element={<TermOfUseCallWallpaper />} />
+          <Route path="/call-wallpaper" element={<PrivacyPolicyCallWallpaper />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
