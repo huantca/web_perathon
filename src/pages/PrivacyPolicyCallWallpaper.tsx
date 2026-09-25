@@ -75,7 +75,7 @@ const PrivacyPolicyCallWallpaper: React.FC = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4 text-blue-800">1. Giới thiệu</h2>
             <p className="mb-4 leading-relaxed">
-              Chính sách Quyền riêng tư này (“Chính sách”) được áp dụng cho ứng dụng di động <strong>Call Wallpaper</strong> (Package: <code>pera.screencall.ringtone</code>) trên Google Play Store và các kho ứng dụng di động (“Ứng dụng”).
+              Chính sách Quyền riêng tư này (“Chính sách”) được áp dụng cho ứng dụng di động <strong>Call Wallpaper</strong> trên Google Play Store và các kho ứng dụng di động (“Ứng dụng”).
             </p>
             <p className="mb-4 leading-relaxed">
               Ứng dụng thuộc quyền sở hữu và được vận hành bởi <strong>CÔNG TY TNHH CÔNG NGHỆ VÀ DỊCH VỤ PERATHON</strong>, có trụ sở đăng ký tại <strong>Số 94, Ngõ 77, Đường Võ Nguyên Giáp, Thôn Số 1, Xã Sơn Động, Tỉnh Bắc Ninh, Việt Nam</strong>. Trong toàn bộ văn bản này, các cụm từ “Perathon”, “chúng tôi”, “của chúng tôi”, hoặc “ứng dụng” đều chỉ CÔNG TY TNHH CÔNG NGHỆ VÀ DỊCH VỤ PERATHON.
@@ -253,7 +253,7 @@ const PrivacyPolicyCallWallpaper: React.FC = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4 text-blue-800">1. Introduction</h2>
             <p className="mb-4 leading-relaxed">
-              This Privacy Policy (“Policy”) governs the mobile application <strong>Call Wallpaper</strong> (Package ID: <code>pera.screencall.ringtone</code>) available on Google Play and related mobile app distribution channels (“Application”).
+              This Privacy Policy (“Policy”) governs the mobile application <strong>Call Wallpaper</strong> available on Google Play and related mobile app distribution channels (“Application”).
             </p>
             <p className="mb-4 leading-relaxed">
               The Application is owned and operated by <strong>PERATHON TECHNOLOGY AND SERVICE COMPANY LIMITED</strong> (registered in Vietnam as <em>CÔNG TY TNHH CÔNG NGHỆ VÀ DỊCH VỤ PERATHON</em>), located at <strong>No. 94, Alley 77, Vo Nguyen Giap Road, Village 1, Son Dong Commune, Bac Ninh Province, Vietnam</strong>. Throughout this Policy, “Perathon”, “we”, “our”, or “us” refers to PERATHON TECHNOLOGY AND SERVICE COMPANY LIMITED.
