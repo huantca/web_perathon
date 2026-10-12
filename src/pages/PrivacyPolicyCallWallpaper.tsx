@@ -146,9 +146,6 @@ const PrivacyPolicyCallWallpaper: React.FC = () => {
                 <strong>Quyền Đọc trạng thái điện thoại (READ_PHONE_STATE):</strong> Giúp ứng dụng phát hiện trạng thái cuộc gọi (đang đổ chuông, nhấc máy, kết thúc) theo thời gian thực để hiển thị giao diện màn hình cuộc gọi tùy biến, kích hoạt viền LED chạy quanh màn hình và khởi động đèn flash cảnh báo.
               </li>
               <li>
-                <strong>Quyền Đọc nhật ký cuộc gọi (READ_CALL_LOG):</strong> Hiển thị danh sách cuộc gọi gần đây trên màn hình quay số và lưu trữ trạng thái xử lý cuộc gọi (cuộc gọi đã nhận, bị chặn hoặc bị tắt chuông) trong lịch sử sàng lọc cuộc gọi.
-              </li>
-              <li>
                 <strong>Quyền Danh bạ (READ_CONTACTS &amp; WRITE_CONTACTS):</strong> Cho phép ứng dụng hiển thị tên, số điện thoại và ảnh liên hệ khi có cuộc gọi; hỗ trợ tính năng luôn cho phép các số trong danh bạ (Whitelist) trong bộ lọc cuộc gọi; và cho phép bạn thiết lập hình nền/nhạc chuông riêng cho từng liên hệ cũng như thêm/sửa liên hệ từ bàn phím quay số.
               </li>
               <li>
